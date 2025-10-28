@@ -1,0 +1,172 @@
+{
+  "generatedAt": "2024-03-25T06:00:00Z",
+  "assets": [
+    {
+      "symbol": "SPY",
+      "name": "S&P 500 ETF",
+      "data": [
+        { "date": "2024-02-20", "close": 495.3, "sentiment": 0.12 },
+        { "date": "2024-02-21", "close": 497.1, "sentiment": 0.18 },
+        { "date": "2024-02-22", "close": 498.5, "sentiment": 0.21 },
+        { "date": "2024-02-23", "close": 500.2, "sentiment": 0.28 },
+        { "date": "2024-02-26", "close": 501.8, "sentiment": 0.25 },
+        { "date": "2024-02-27", "close": 499.4, "sentiment": 0.17 },
+        { "date": "2024-02-28", "close": 496.8, "sentiment": 0.05 },
+        { "date": "2024-02-29", "close": 498.3, "sentiment": 0.09 },
+        { "date": "2024-03-01", "close": 502.5, "sentiment": 0.27 },
+        { "date": "2024-03-04", "close": 503.1, "sentiment": 0.26 },
+        { "date": "2024-03-05", "close": 499.9, "sentiment": 0.11 },
+        { "date": "2024-03-06", "close": 498.1, "sentiment": 0.08 },
+        { "date": "2024-03-07", "close": 503.7, "sentiment": 0.29 },
+        { "date": "2024-03-08", "close": 506.9, "sentiment": 0.33 },
+        { "date": "2024-03-11", "close": 508.2, "sentiment": 0.31 },
+        { "date": "2024-03-12", "close": 510.6, "sentiment": 0.34 },
+        { "date": "2024-03-13", "close": 511.2, "sentiment": 0.32 },
+        { "date": "2024-03-14", "close": 513.8, "sentiment": 0.36 },
+        { "date": "2024-03-15", "close": 514.5, "sentiment": 0.38 },
+        { "date": "2024-03-18", "close": 516.7, "sentiment": 0.41 },
+        { "date": "2024-03-19", "close": 515.1, "sentiment": 0.35 },
+        { "date": "2024-03-20", "close": 520.8, "sentiment": 0.48 },
+        { "date": "2024-03-21", "close": 521.5, "sentiment": 0.47 },
+        { "date": "2024-03-22", "close": 522.1, "sentiment": 0.44 }
+      ]
+    },
+    {
+      "symbol": "NDX",
+      "name": "NASDAQ 100 Index",
+      "data": [
+        { "date": "2024-02-20", "close": 17892, "sentiment": 0.15 },
+        { "date": "2024-02-21", "close": 17933, "sentiment": 0.18 },
+        { "date": "2024-02-22", "close": 18011, "sentiment": 0.22 },
+        { "date": "2024-02-23", "close": 18105, "sentiment": 0.25 },
+        { "date": "2024-02-26", "close": 18189, "sentiment": 0.27 },
+        { "date": "2024-02-27", "close": 18102, "sentiment": 0.19 },
+        { "date": "2024-02-28", "close": 18054, "sentiment": 0.12 },
+        { "date": "2024-02-29", "close": 18145, "sentiment": 0.17 },
+        { "date": "2024-03-01", "close": 18302, "sentiment": 0.28 },
+        { "date": "2024-03-04", "close": 18361, "sentiment": 0.27 },
+        { "date": "2024-03-05", "close": 18244, "sentiment": 0.18 },
+        { "date": "2024-03-06", "close": 18187, "sentiment": 0.14 },
+        { "date": "2024-03-07", "close": 18493, "sentiment": 0.32 },
+        { "date": "2024-03-08", "close": 18610, "sentiment": 0.36 },
+        { "date": "2024-03-11", "close": 18677, "sentiment": 0.34 },
+        { "date": "2024-03-12", "close": 18782, "sentiment": 0.37 },
+        { "date": "2024-03-13", "close": 18831, "sentiment": 0.35 },
+        { "date": "2024-03-14", "close": 18972, "sentiment": 0.39 },
+        { "date": "2024-03-15", "close": 19055, "sentiment": 0.41 },
+        { "date": "2024-03-18", "close": 19132, "sentiment": 0.44 },
+        { "date": "2024-03-19", "close": 19008, "sentiment": 0.37 },
+        { "date": "2024-03-20", "close": 19265, "sentiment": 0.48 },
+        { "date": "2024-03-21", "close": 19324, "sentiment": 0.47 },
+        { "date": "2024-03-22", "close": 19385, "sentiment": 0.45 }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event-fed",
+      "date": "2024-03-20",
+      "title": "聯準會維持利率但釋出年內降息訊號",
+      "category": "央行",
+      "impact": "high",
+      "sentimentScore": 0.52,
+      "symbols": ["SPY", "NDX"],
+      "summary": "FOMC 點陣圖顯示 2024 年預計降息三碼，激勵科技與成長股延續漲勢。",
+      "links": [
+        {
+          "label": "FOMC Statement",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases.htm"
+        }
+      ]
+    },
+    {
+      "id": "event-ai",
+      "date": "2024-03-07",
+      "title": "大型科技公司發表 AI 晶片新布局",
+      "category": "企業財報",
+      "impact": "medium",
+      "sentimentScore": 0.41,
+      "symbols": ["NDX"],
+      "summary": "AI 硬體供應鏈公布樂觀營收指引，推升 Nasdaq 100 創歷史新高。",
+      "links": [
+        {
+          "label": "TechCrunch 報導",
+          "url": "https://techcrunch.com/"
+        }
+      ]
+    },
+    {
+      "id": "event-jobs",
+      "date": "2024-03-08",
+      "title": "美國非農新增 24.5 萬超越預期",
+      "category": "經濟數據",
+      "impact": "medium",
+      "sentimentScore": 0.18,
+      "symbols": ["SPY"],
+      "summary": "就業市場仍具韌性，市場解讀溫和成長伴隨通膨趨緩，股市延續多頭氣氛。",
+      "links": [
+        {
+          "label": "BLS 報告",
+          "url": "https://www.bls.gov/"
+        }
+      ]
+    },
+    {
+      "id": "event-cpi",
+      "date": "2024-03-12",
+      "title": "美國 CPI 年增 3.2% 高於預期",
+      "category": "經濟數據",
+      "impact": "high",
+      "sentimentScore": -0.22,
+      "symbols": ["SPY", "NDX"],
+      "summary": "通膨黏著度引發短線波動，但市場押注核心物價放緩，跌勢有限。",
+      "links": []
+    }
+  ],
+  "indicators": [
+    {
+      "name": "VIX 恐慌指數",
+      "value": "13.8",
+      "trend": "down",
+      "delta": "-0.6 vs 上週",
+      "commentary": "波動率回到後疫情低檔，顯示風險偏好延續。"
+    },
+    {
+      "name": "美元指數 (DXY)",
+      "value": "103.1",
+      "trend": "flat",
+      "delta": "-0.1 vs 上週",
+      "commentary": "美元高檔整理，資金轉向股市與原物料。"
+    },
+    {
+      "name": "美債 10 年殖利率",
+      "value": "4.19%",
+      "trend": "down",
+      "delta": "-0.07 vs 上週",
+      "commentary": "利率回落至 2 月底以來低點，成長股估值支撐強。"
+    },
+    {
+      "name": "AAII 投資人情緒",
+      "value": "看多 45%",
+      "trend": "up",
+      "delta": "+3ppt vs 上週",
+      "commentary": "散戶樂觀度升溫，但尚未進入極端。"
+    }
+  ],
+  "narrative": {
+    "marketPulse": [
+      "美股三大指數延續創高趨勢，科技權值股領漲。",
+      "量能放大搭配 VIX 下滑，風險偏好環境穩固。"
+    ],
+    "topDrivers": [
+      "聯準會暗示年內降息三碼，壓低美債殖利率。",
+      "AI 供應鏈財測優於預期，推動 Nasdaq 走勢。",
+      "就業與通膨數據交織，短線波動後仍回歸多頭。"
+    ],
+    "forwardLook": [
+      "觀察下週核心 PCE 是否確認通膨趨緩。",
+      "留意大型科技法說會釋出的資本支出指引。",
+      "美元走勢若轉強，需提防新興市場資金外流。"
+    ]
+  }
+}
