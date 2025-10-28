@@ -3,111 +3,78 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>市場敘事雷達 | Market Narrative Radar</title>
+    <title>清大 × 交大 排球小遊戲</title>
     <meta
       name="description"
-      content="結合事件、指標與資產走勢，讓市場波動有故事可看。"
+      content="以清華熊貓與陽明交大狐狸為主角，重現皮卡丘排球的熱血對決！"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <header class="app-header">
-      <div class="logo-area">
-        <div class="logo-mark">MN</div>
-        <div>
-          <h1>市場敘事雷達</h1>
-          <p class="subtitle">事件 × 指標 × 情緒 × 價格</p>
-        </div>
+    <header class="site-header">
+      <div class="branding">
+        <h1>清大 × 交大 皮卡丘排球</h1>
+        <p>熊貓 vs 狐狸，一決勝負！</p>
       </div>
-      <div class="controls">
-        <label class="control">
-          <span>觀測資產</span>
-          <select id="asset-select"></select>
-        </label>
-        <label class="control">
-          <span>時間範圍</span>
-          <select id="range-select">
-            <option value="30">近 30 天</option>
-            <option value="90">近 90 天</option>
-            <option value="180">近 180 天</option>
-          </select>
-        </label>
+      <div class="scoreboard" aria-live="polite">
+        <div class="team-score">
+          <span class="team-label panda-label">清大熊貓</span>
+          <span id="score-panda" class="score-value">0</span>
+        </div>
+        <div class="team-score">
+          <span class="team-label fox-label">交大狐狸</span>
+          <span id="score-fox" class="score-value">0</span>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="hero">
-        <div>
-          <h2>市場波動，也要有故事</h2>
-          <p>
-            我們把經濟事件、行情指標與情緒訊號串在同一條時間軸上，以
-            AI 生成的敘事摘要讓你掌握市場「為什麼這樣動」。
-          </p>
-          <div class="hero-tags">
-            <span class="tag">自動更新</span>
-            <span class="tag">行動裝置最佳化</span>
-            <span class="tag">敘事視覺化</span>
-          </div>
-        </div>
+      <section class="game-wrapper">
+        <canvas
+          id="game-canvas"
+          width="960"
+          height="540"
+          role="img"
+          aria-label="清大熊貓與交大狐狸的排球比賽場景"
+        ></canvas>
+        <div id="message" class="game-message" role="status"></div>
       </section>
 
-      <section class="dashboard">
-        <article class="panel chart-panel">
-          <header>
-            <h3>資產走勢與關鍵事件</h3>
-            <p id="chart-caption">Loading…</p>
-          </header>
-          <canvas id="price-chart" height="240"></canvas>
-          <div class="legend" id="legend"></div>
-        </article>
-
-        <article class="panel timeline-panel">
-          <header>
-            <h3>事件脈絡</h3>
-            <p>一眼看懂引爆市場情緒的重大事件。</p>
-          </header>
-          <div id="event-timeline" class="timeline"></div>
-        </article>
-
-        <article class="panel narrative-panel">
-          <header>
-            <h3>AI 敘事摘要</h3>
-            <p>自動提煉市場脈動與未來觀察重點。</p>
-          </header>
-          <div class="narrative" id="narrative"></div>
-        </article>
-
-        <article class="panel indicator-panel">
-          <header>
-            <h3>核心指標快照</h3>
-            <p>技術面與情緒面雙管齊下。</p>
-          </header>
-          <div class="indicator-grid" id="indicator-grid"></div>
-        </article>
+      <section class="instructions">
+        <h2>操作方式</h2>
+        <div class="controls-grid">
+          <div>
+            <h3>清大熊貓（左側）</h3>
+            <ul>
+              <li>← →：左右移動</li>
+              <li>↑：跳躍</li>
+            </ul>
+          </div>
+          <div>
+            <h3>交大狐狸（右側）</h3>
+            <ul>
+              <li>A / D：左右移動</li>
+              <li>W：跳躍</li>
+            </ul>
+          </div>
+        </div>
+        <p class="tip">將排球擊落在對手的場地就能得分，先拿到 5 分就贏啦！按下空白鍵可以重新開局。</p>
       </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
       <p>
-        資料每日以 GitHub Actions 擷取公開 API 並更新 JSON，AI 敘事由
-        LLM 工作流程生成。
-      </p>
-      <p class="footer-links">
-        <a href="https://github.com" target="_blank" rel="noopener"
-          >資料來源與流程說明</a
-        >
+        靈感來自皮卡丘排球與清交排球賽。這是一款可在 GitHub Pages
+        codex-demo-nthu.github.io 上直接遊玩的 DEMO。
       </p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1"></script>
     <script src="assets/main.js" type="module"></script>
   </body>
 </html>
