@@ -1,44 +1,40 @@
-# 市場敘事雷達 (Market Narrative Radar)
+# 清大 × 交大 排球小遊戲
 
-靜態化的金融市場觀測平台範例，專為 GitHub Pages / `github.io` 部署設計。透過同一條時間軸串連資產價格、重大事件、情緒指標，並搭配 AI 生成敘事摘要，協助使用者理解市場波動背後的故事。
+以清華熊貓與陽明交大狐狸為主角、致敬皮卡丘排球的瀏覽器小遊戲。專案為純前端實作，部署在 GitHub Pages 後可直接於瀏覽器遊玩，也支援桌面與行動裝置操作。
 
-## 功能亮點
+## 快速體驗
 
-- 📈 **雙軸行情圖表**：使用 Chart.js 呈現資產價格與情緒指數，並自動標註重要事件。
-- 🧭 **事件敘事時間線**：以卡片呈現事件類型、影響強度與參考連結。
-- 🧠 **AI 敘事摘要容器**：預留給 LLM 工作流程寫入的市場脈動、驅動因素與前瞻觀察。
-- 🧮 **指標快照**：自訂指標卡片（如 VIX、美元指數、殖利率），即時顯示趨勢與評論。
-- 📱 **行動裝置最佳化**：純前端、RWD 設計，手機瀏覽體驗良好。
+- **線上遊玩**：<https://vic4code.github.io/codex-demo-nthu>
+- **本地預覽**：在專案根目錄啟動任一靜態伺服器（例如 `python -m http.server 8000`），於瀏覽器造訪 `http://localhost:8000/`。
+
+## 操作說明
+
+| 隊伍 | 控制鍵 |
+| --- | --- |
+| 清大熊貓（左側） | `←` / `→` 左右移動、`↑` 跳躍 |
+| 交大狐狸（右側） | `A` / `D` 左右移動、`W` 跳躍 |
+| 共同 | `Space` 開始或下一局、比賽結束後再按一次重置比分 |
+
+比賽先拿到 5 分者獲勝，排球落在對手場地即得分。
 
 ## 專案結構
 
-```
-├─ index.html          # 主頁，引用 CSS/JS 與靜態資料
+```text
+├─ index.html          # 主頁，載入樣式與遊戲主程式
 ├─ assets/
-│  ├─ style.css        # 深色系介面設計（含 RWD）
-│  └─ main.js          # Chart.js 視覺化、事件時間線與敘事呈現
-├─ data/
-│  └─ market_data.json # 範例資料與敘事摘要，可由自動流程覆寫
-└─ scripts/
-   └─ README.md        # （預留）GitHub Actions / 資料更新腳本說明
+│  ├─ style.css        # 場景、版面與 RWD 設計
+│  └─ main.js          # Canvas 遊戲邏輯、角色繪製與物理模擬
+└─ data/               # （保留）若需擴充資料或設定，可放於此
 ```
 
-## 自動化資料更新建議流程
+> 📁 `scripts/` 目前僅保留說明文件，若未來要自動化部署或生成資產，可在此新增腳本。
 
-1. **GitHub Actions 擷取資料**：
-   - 建立排程工作 (`cron`) 透過公開 API（如 Alpha Vantage、FRED、NewsAPI 等）抓取行情與事件資料。
-   - 於 Actions 中使用 `secrets` 儲存 API Key，產出 `data/market_data.json`。
-2. **LLM 敘事摘要**：
-   - 使用 OpenAI、Azure OpenAI 或其他 LLM 服務，在 GitHub Actions 工作流中根據最新資料產生敘事段落。
-   - 將結果寫入 `narrative` 欄位，並更新 `generatedAt`。
-3. **自動部署**：
-   - 啟用 GitHub Pages（Branch: `main`, Folder: `/`），提交 JSON 與靜態檔案更新即可自動發布。
+## 部署到 GitHub Pages
 
-## 本地開發
-
-1. 以任何靜態伺服器（如 VS Code Live Server、`python -m http.server`）啟動根目錄。
-2. 開啟瀏覽器造訪 `http://localhost:8000`（或對應 port），即可在桌面與行動裝置模式下預覽。
+1. 將專案推送至 GitHub，並於 Repository 設定中啟用 GitHub Pages，來源選擇 `main` 分支根目錄。
+2. 完成後即可透過 `https://<username>.github.io/codex-demo-nthu/` 存取遊戲。
+3. 若調整遊戲資源（HTML / CSS / JS），重新推送即可觸發 GitHub Pages 自動更新。
 
 ## 授權
 
-此專案示範用，依據個別資料來源的授權條款使用。請在上線前確認 API 與新聞來源的授權需求。
+此專案作為示範用途，您可以依需求修改並部署。若引入第三方圖片或音效，請確認相關素材授權。
